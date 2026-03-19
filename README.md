@@ -55,11 +55,11 @@ pip install pystray pillow pyinstaller
    ```
 2. Place the official TrustTunnel binaries next to `gui_client.py`:
    ```
-   project/
-   ├── gui_client.py
-   ├── trusttunnel_client.exe   ← from TrustTunnel/TrustTunnelClient releases
-   ├── setup_wizard.exe
-   └── wintun.dll
+   project/  ← from TrustTunnel/TrustTunnelClient releases
+   ├── gui_client.py ← Custom gui client
+   ├── trusttunnel_client.exe  ← Official packege
+   ├── setup_wizard.exe ← Official packege
+   └── wintun.dll ← Official packege
    ```
 3. Run:
    ```bat
