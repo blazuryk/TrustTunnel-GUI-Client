@@ -39,7 +39,7 @@ pip install pystray pillow pyinstaller
 
 ### Option A — Pre-built release (recommended)
 
-1. Download `TrustTunnel.exe` from the [Releases](../../releases) page
+1. Download `TrustTunnel.exe(or gui_client.exe)` from the [Releases](../../releases) page
 2. Run it — Administrator access will be requested automatically
 3. Enter your server credentials **or** import a `.toml` config (see below)
 4. Click the power button to connect
