@@ -37,22 +37,36 @@ pip install pystray pillow pyinstaller
 
 ## 🚀 Quick Start
 
-1. Download the latest release from the [Releases](../../releases) page
-2. Place all files in the same folder:
-   ```
-   TrustTunnel-GUI/
-   ├── TrustTunnel.exe        ← the GUI (or run gui_client.py directly)
-   ├── trusttunnel_client.exe ← official TrustTunnel CLI client
-   ├── setup_wizard.exe       ← official TrustTunnel setup tool
-   └── wintun.dll             ← WinTun driver (required for TUN interface)
-   ```
-3. Run `TrustTunnel.exe` — it will ask for Administrator access
-4. Enter your server credentials **or** import a `.toml` config (see below)
-5. Click the power button to connect
+### Option A — Pre-built release (recommended)
 
-> **Note:** `trusttunnel_client.exe`, `setup_wizard.exe` and `wintun.dll` are **official binaries**
-> from [TrustTunnel/TrustTunnelClient](https://github.com/TrustTunnel/TrustTunnelClient).
-> Download the latest Windows release from their releases page and place the files next to this GUI.
+1. Download `TrustTunnel.exe` from the [Releases](../../releases) page
+2. Run it — Administrator access will be requested automatically
+3. Enter your server credentials **or** import a `.toml` config (see below)
+4. Click the power button to connect
+
+> `trusttunnel_client.exe`, `setup_wizard.exe` and `wintun.dll` are already bundled
+> inside the `.exe` — no extra files needed.
+
+### Option B — Run from source
+
+1. Clone the repo and install dependencies:
+   ```bat
+   pip install pystray pillow
+   ```
+2. Place the official TrustTunnel binaries next to `gui_client.py`:
+   ```
+   project/
+   ├── gui_client.py
+   ├── trusttunnel_client.exe   ← from TrustTunnel/TrustTunnelClient releases
+   ├── setup_wizard.exe
+   └── wintun.dll
+   ```
+3. Run:
+   ```bat
+   python gui_client.py
+   ```
+
+> Official binaries: [github.com/TrustTunnel/TrustTunnelClient/releases](https://github.com/TrustTunnel/TrustTunnelClient/releases)
 
 ---
 
@@ -179,13 +193,14 @@ The output will be at `dist\gui_client.exe`. Rename it as you like.
 ├── gui_client.py              # GUI source (this project)
 ├── README.md
 ├── LICENSE
-├── THIRD_PARTY_NOTICES.md
-│
-└── bin/                       # place official TrustTunnel binaries here
-    ├── trusttunnel_client.exe
-    ├── setup_wizard.exe
-    └── wintun.dll
+└── THIRD_PARTY_NOTICES.md
 ```
+
+> The official TrustTunnel binaries (`trusttunnel_client.exe`, `setup_wizard.exe`, `wintun.dll`)
+> are **not stored in this repository**. They are bundled into the `.exe` at build time via
+> PyInstaller `--add-binary`. To build from source, download them from the
+> [TrustTunnel releases page](https://github.com/TrustTunnel/TrustTunnelClient/releases)
+> and place them next to `gui_client.py` before running PyInstaller.
 
 ---
 
